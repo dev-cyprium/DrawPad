@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Draw pad - by Cyprium</title>
+	<!-- JQUERY -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<!-- SketchPad -->
+	<script src="sketch.js"></script>
+
+	<!-- Styles -->
+	<style>
+
+		#drawArea {
+			width: 400px;
+			height: 400px;
+			margin: auto;
+			border: 1px solid black;
+			margin-bottom: 10px;
+		}
+
+		.node {
+			display: inline;
+			float: left;
+		}
+
+		h1 {
+			border-bottom: 1px solid black;
+			text-align: center;
+		}
+
+		#controls {
+			text-align: center;
+		}
+
+		button {
+			height: 30px;
+			width: 100px;
+		}
+		#message {
+			text-align: center;
+		}
+
+		#footer {
+			border-top: 1px solid black;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>Drawing Application</h1>
+	<div id="controls">
+		<button id="clear">Clear</button>
+		<button id="grid">New Grid</button>
+		<button id="default">Default</button>
+		<button id="random">Random</button>
+	</div>
+	<div id="message">Selected mode: <span>Default</span></div>
+	<div id="drawArea"></div>
+	<div id="footer">
+	<span>Thanks for using my app, I had a blast making it :)</span>
+	</div>
+</body>
+</html>
