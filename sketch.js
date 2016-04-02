@@ -8,17 +8,14 @@ $(document).ready(function() {
 	// append all nodes
 	generateGrid(16,16);
 
-	$(".node").mouseenter(function() {
-		draw(this);
-	});
 
 	$('#clear').click(function() {
 		clearGrid();
 	});
 	$('#grid').click(function() {
 		var size = prompt("Please enter grid size(limit 64): ");
-		if(size < 64 && size > 2) {
-			clearGrid();
+		if(size <= 64 && size >= 2) {
+			$('#drawArea').html("");
 			generateGrid(size,size);
 		} else {
 			alert("Wrong params.");
@@ -35,16 +32,20 @@ $(document).ready(function() {
 });
 
 function generateGrid(rows, cols) {
-	for(i=0;i<16;i++) {
-		for(j=0;j<16;j++) {
+	for(i=0;i<rows;i++) {
+		for(j=0;j<cols;j++) {
 			var $div = $("<div>", {id: i + "_" + j, class: "node"});
-			var w = drawWidth / 16;
-			var h = drawHeight / 16;
+			var w = drawWidth / rows;
+			var h = drawHeight / cols;
 			$($div).css("width",w+"px");
 			$($div).css("height",h+"px")
 			$("#drawArea").append($div);
 		}
 	}
+
+	$(".node").mouseenter(function() {
+		draw(this);
+	});
 }
 
 
